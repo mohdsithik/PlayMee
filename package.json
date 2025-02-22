@@ -7,11 +7,29 @@
     "ios": "react-native run-ios",
     "lint": "eslint .",
     "start": "react-native start",
-    "test": "jest"
+    "test": "jest",
+    "android:staging": "react-native run-android --mode=stagingdebug --appId com.playmee.staging",
+    "android:staging-release": "react-native run-android --mode=stagingrelease --appId com.playmee.staging",
+    "android:dev": "react-native run-android --mode=developmentdebug --appId com.playmee.development",
+    "android:dev-release": "react-native run-android --mode=developmentrelease --appId com.playmee.development",
+    "android:prod": "react-native run-android --mode=productiondebug --appId com.playmee",
+    "android:prod-release": "react-native run-android --mode=productionrelease --appId com.playmee",
+    "ba": "react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res",
+    "ra": "rm -rf android/app/src/main/res/drawable-hdpi &&  rm -rf android/app/src/main/res/drawable-mdpi &&  rm -rf android/app/src/main/res/drawable-xhdpi && rm -rf android/app/src/main/res/drawable-xxhdpi && rm -rf android/app/src/main/res/drawable-xxxhdpi && rm -rf android/app/src/main/res/raw && npx jetify",
+    "androidProductionReleaseBundle": " cd android && ./gradlew bundleProductionRelease && killall -9 java && open ./android/app/build/outputs/bundle/production/release",
+    "androidDevelopmentDebugAPK": "yarn clean && cd android && ./gradlew assembleDevelopmentDebug && killall -9 java && open ./android/app/build/outputs/apk/development/debug",
+    "androidDevelopmentReleaseAPK": "yarn clean && cd android && ./gradlew assembleDevelopmentRelease && killall -9 java && open ./android/app/build/outputs/apk/development/release",
+    "androidProductionDebugAPK": "yarn cd android && ./gradlew assembleProductionDebug && killall -9 java && open ./android/app/build/outputs/apk/production/debug",
+    "androidProductionReleaseAPK": "yarn clean && cd android && ./gradlew assembleProductionRelease && killall -9 java && open ./android/app/build/outputs/apk/production/release",
+    "androidStagingDebugAPK": "yarn clean && cd android && ./gradlew assembleStagingDebug && killall -9 java && open ./android/app/build/outputs/apk/staging/debug",
+    "androidStagingReleaseAPK": "yarn clean && cd android && ./gradlew assembleStagingRelease && killall -9 java && open ./android/app/build/outputs/apk/staging/release",
+    "androidReleaseAPK": "cd android && ./gradlew assembleRelease",
+    "androidReleaseBundle": "cd android && ./gradlew bundleRelease"
   },
   "dependencies": {
     "react": "19.0.0",
-    "react-native": "0.78.0"
+    "react-native": "0.78.0",
+    "react-native-config": "^1.5.5"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",
