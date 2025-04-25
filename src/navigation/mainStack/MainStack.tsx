@@ -1,8 +1,9 @@
-import {createStackNavigator} from '@react-navigation/stack';
-import {RootStackParamList} from '../Routes';
+import {RootStackParamList} from '@navigation/Routes';
+import {ScreenName} from '@navigation/ScreenName';
 import {NavigationContainer} from '@react-navigation/native';
-import {ScreenName} from '../ScreenName';
-import SplashScreen from '../../screens/splashScreen/SplashScreen';
+import {createStackNavigator} from '@react-navigation/stack';
+import SplashScreen from '@screens/splashScreen/SplashScreen';
+
 import React from 'react';
 
 const RootStack = createStackNavigator<RootStackParamList>();

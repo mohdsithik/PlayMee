@@ -1,6 +1,6 @@
+import {RootStackScreenProps} from '@navigation/Routes';
 import React from 'react';
 import {Text, View} from 'react-native';
-import {RootStackScreenProps} from '../../navigation/Routes';
 
 const SplashScreen = ({}: RootStackScreenProps<'SplashScreen'>) => {
   return (
